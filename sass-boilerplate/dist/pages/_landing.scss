@@ -1,0 +1,311 @@
+.update{
+    background: black;
+    padding-top: 6rem;
+    h3{
+        color: gray;
+        text-align: center;
+        a{
+            color: $clr-blue;
+            text-decoration: underline;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+.banner{
+    background: $clr-dark;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        img{
+            max-width: 90%;
+        }
+    }
+    &__text{
+        h1{
+            color: $clr-light;
+            font-size: 4rem;
+        }
+        
+    }
+    &__actions{
+        h3{
+            color: $clr-light;
+            font-size: 1.5rem;
+            opacity: .6;
+            margin: 2rem 0;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 1rem 0;
+            li{
+                background: $clr-blue;
+                height: 5rem;
+                padding: .8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                a{
+                    color: $clr-light;
+                }
+                i{
+                    font-size: 2rem;
+                }
+                &:hover{
+                    opacity: .9;
+                }
+                &:first-child{
+                    width: 25.4rem;
+                }
+                h6{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        p{
+            background: rgb(0, 0, 0);
+            color: $clr-light;
+            font-size: 1.2rem;
+            border-radius: .5rem;
+            padding: .5rem;
+            span{
+                color: $clr-blue;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &__content{
+        margin: 1rem 0;
+        p{
+            color: rgb($clr-light,.6);
+            span{
+                color: $clr-blue;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            h1{
+                font-size: 4rem;
+            }
+            img{
+                @include imgFit(unset,46rem);
+            }
+        }
+        &__actions{
+            ul{
+                li{
+                    &:first-child{
+                        width: 25rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mediaQuery($break-xl){
+        &__wrapper{
+            img{
+                @include imgFit(unset,55rem);
+            }
+        }
+    }
+
+
+}
+
+.testimonies{
+    padding: 5rem 0;
+    position: relative;
+    background: #f5f5f5;
+    &__wrapper{
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        i{
+            font-size: 3rem;
+        }
+        .kamote{
+            padding: 1rem 0;
+        }
+    }
+    &__item{
+        margin: 0 3rem;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 1.5rem;
+        img{
+            @include imgFit(7.2rem,7.2rem);
+            border-radius: 50%;
+            box-shadow: 1px 1px 7px $clr-dark;
+        }
+        &__text{
+            h4{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                span{
+                    font-size: 2rem;
+                    cursor: pointer;
+                    &:hover{
+                        color: $clr-blue;
+                    }
+                }
+                i{
+                    font-size: unset;
+                    opacity: .3;
+                }
+                
+            }
+            h6{
+                margin: 1rem 0;
+            }
+        }
+        &:not(:first-child){
+            margin-top: 5rem;
+        }
+    }
+    .tns-nav{
+        display: none;
+    }
+    .tns-controls{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 94vw;
+        top:50%;
+        z-index: 999;
+        button{
+            background: none;
+            border: none;
+            font-size: 2rem;
+        }
+    }
+    @include mediaQuery($break-lg){
+        #tns1 > .tns-item{
+            display: inline-flex;
+            align-items: center;
+        }
+
+        &__item{
+            &:not(:first-child){
+                margin-top: 0rem;
+            }
+        }
+        .tns-controls{
+            top: 35%;
+            width: 73vw;
+        }
+    }
+}
+
+.assets{
+    background: $clr-light;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 2rem;
+        img{
+            margin: 0 auto;
+            width: 25rem;
+        }
+
+        h4{
+            font-size: 2rem;
+            color: $clr-dark;
+            margin: 2rem 0;
+        }
+        p{
+            margin-top: 2rem;
+            line-height: 3rem;
+            a{
+                color: $clr-blue;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        &:nth-child(2){
+            background: $clr-d-light;
+        }
+        &:nth-child(4){
+            background: $clr-d-light;
+            transition: .5s ease;
+            img{
+                cursor: pointer;
+                &:hover{
+                    transform: scale(105%);
+                    transition: .5s ease;
+                }
+            }
+            
+        }
+        &:last-child{
+            background: $clr-d-light;
+            h4{
+                text-align: center;
+            }
+            a{
+                color: $clr-blue;
+                margin-bottom: 2rem;
+                text-align: center;
+                font-size: 1.5rem;
+                &:hover{
+                    text-decoration: underline;
+                }
+
+                &:last-child{
+                    color: $clr-light;
+                    background: $clr-blue;
+                    padding: 1rem;
+                    width: fit-content;
+                    margin: 0 auto;
+                    font-size: 2.5rem;
+                    &:hover{
+                        text-decoration: none;
+                        
+                    }
+                }
+            }
+        }
+        &__item{
+            display: flex;
+            align-items: center;
+            gap: 10rem;
+            ul{
+                li{
+                    margin: 1.5rem 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    img{
+                        width:3rem;
+                        margin: 0;
+                    }
+                }
+                
+            }
+        }
+    }
+}
