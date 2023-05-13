@@ -74,4 +74,56 @@
             }
         }
     }
+    @include mediaQuery($break-lg){
+        .toggle__menu{
+            display: none;
+        }
+        &__nav{
+            position:unset;
+            max-height: none;
+            width: fit-content;
+            ul{
+                display: none;
+            }
+            .header__actions{
+                ul{
+                    display: flex;
+                    li{
+                        &:first-child{
+                            a{
+                                display: none;
+                            }
+                            i{
+                                color: gray;
+                                &:hover{
+                                    color: $clr-light;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__wrapper{
+            .branding{
+                ul{
+                    display: flex;
+                    li{
+                        padding: 2rem;
+                        a{
+                            color:gray;
+                            font-size: 2rem;
+                            &:hover{
+                                color: $clr-light;
+                            }
+                        }
+                        &:hover{
+                            cursor: pointer;;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

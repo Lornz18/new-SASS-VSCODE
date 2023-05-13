@@ -1,6 +1,6 @@
 .update{
     background: black;
-    padding-top: 6rem;
+    padding-top: 9rem;
     h3{
         color: gray;
         text-align: center;
@@ -19,7 +19,7 @@
     background: $clr-dark;
     &__wrapper{
         display: flex;
-        align-items: center;
+        align-items:center;
         flex-direction: column;
         text-align: center;
         img{
@@ -102,7 +102,6 @@
     @include mediaQuery($break-lg){
         &__wrapper{
             flex-direction: row;
-            align-items: center;
             justify-content: space-around;
             h1{
                 font-size: 4rem;
@@ -215,7 +214,12 @@
         }
         .tns-controls{
             top: 35%;
-            width: 73vw;
+            width:97vw;
+        }
+    }
+    @include mediaQuery($break-xl){
+        .tns-controls{
+            width: 80vw;
         }
     }
 }
@@ -223,9 +227,14 @@
 .assets{
     background: $clr-light;
     &__content{
-        display: flex;
-        flex-direction: column;
-        padding: 5rem 2rem;
+        .grid{
+            width: 100%;
+            max-width: 140rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 5rem 2rem;
+        }
         img{
             margin: 0 auto;
             width: 25rem;
@@ -305,6 +314,60 @@
                     }
                 }
                 
+            }
+        }
+    }
+    @include mediaQuery($break-lg){
+        &__content{
+            .grid{  
+                flex-direction: row;
+                gap: 10rem;
+            }
+
+            h4{
+                font-size: 3rem;
+            }
+
+            p{
+                font-size: 2rem;
+            }
+
+            img{
+                width: 50rem;
+            }
+
+            &:nth-child(2){
+                .grid{
+                    flex-direction: row-reverse;
+                }
+            }
+            &:nth-child(4){
+                .grid{
+                    flex-direction: row-reverse;
+                }
+            }
+            &:last-child{
+                .grid{
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+                a{
+                    font-size: 2rem;
+                }
+            }
+            &__item{
+                display: block;
+                margin: 0 auto;
+                ul{
+                    display: flex;
+                    gap:2.5rem;
+                    li{
+                       font-size: 2.5rem;
+                       img{
+                        width: 5rem;
+                       }
+                    }
+                }
             }
         }
     }
