@@ -3,11 +3,4 @@
   max-width: 140rem;
   margin: 0 auto;
   padding: 1.5rem;
-
-  @include mediaQuery($break-lg){
-    max-width: 99rem;
-  }
-  @include mediaQuery($break-xl){
-    max-width: 140rem;
-  }
 }
