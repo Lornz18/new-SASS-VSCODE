@@ -1,0 +1,108 @@
+.footer{
+    background: $clr-dark;
+    padding: 5rem 0;
+    ul{
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        li{
+            margin-left: 1rem;
+            p{
+                color: $clr-light;
+                &:hover{
+                    color: $clr-blue;
+                }
+            }
+            &:first-child{
+                display: none;
+            }
+            &:nth-child(3){
+                background: $clr-light;
+                padding: .2rem;
+                border-radius: .5rem;
+                a{
+                    font-size: 1.5rem;
+                    font-weight: 600
+                }
+                &:hover{
+                    background: rgba(245, 245, 245, .9);
+                }
+            }
+            &:last-child{
+                background: $clr-light;
+                padding: .2rem;
+                border-radius: .5rem;
+                a{
+                    font-size: 1.5rem;
+                    font-weight: 600
+                }
+                &:hover{
+                    a{
+                        color: $clr-blue;
+                    }
+                }
+            }
+        }
+    }
+    p{
+        img{
+            @include imgFit(unset,2.5rem);
+            margin-bottom: .5rem;
+        }
+        color: $clr-light;
+    }
+
+    &__actions{
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+        ul{
+            li{
+                background: transparent;
+                &:first-child{
+                    display: unset;
+                }
+                a{
+                    color: $clr-light;
+                    &:hover{
+                        color: $clr-blue;
+                        background: transparent;
+                    }
+                }
+                &:nth-child(3),&:last-child{
+                    background: transparent;
+                    &:hover{
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mediaQuery($break-sm){
+        ul{
+            li{ 
+                &:first-child{
+                    display: unset;
+                }
+            }
+        }
+    }
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+        }
+        &__actions{
+            flex-direction: column;
+            align-items: end;
+        }
+    }
+    @include mediaQuery($break-xl){
+        &__actions{
+            flex-direction: row;
+            align-items: start;
+        }
+    }
+}
