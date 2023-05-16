@@ -74,6 +74,15 @@
             }
         }
     }
+    &__actions{
+        ul{
+            li{
+                i{
+                    display: none;
+                }
+            }
+        }
+    }
     @include mediaQuery($break-lg){
         .toggle__menu{
             display: none;
@@ -121,6 +130,15 @@
                         &:hover{
                             cursor: pointer;;
                         }
+                    }
+                }
+            }
+        }
+        &__actions{
+            ul{
+                li{
+                    i{
+                        display: unset;
                     }
                 }
             }

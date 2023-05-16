@@ -1,6 +1,6 @@
 .update{
     background: black;
-    padding-top: 9rem;
+    padding-top: 6rem;
     h3{
         color: gray;
         text-align: center;
@@ -12,7 +12,10 @@
             }
         }
     }
+    @include mediaQuery($break-lg){
+        padding-top: 9rem;
 
+    }
 }
 
 .banner{
@@ -132,6 +135,66 @@
 
 }
 
+.props{
+    .container{
+        padding: 0 1.5rem;
+    }
+    &__wrapper{
+        @include grid(2,2rem);
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        &:hover{
+            background: $clr-l-gray;
+            .props__content{
+                &.intellisense{
+                    background-position: 0 -5.3rem;
+                }
+                &.debugging{
+                    background-position: -5.2rem -5.3rem;
+                }
+                &.git{
+                    background-position: -10.4rem -5.3rem;
+                }
+                &.extensions-icon{
+                    background-position: -15.6rem -5.3rem;
+                }
+            }
+        }
+        h2{
+            font-size: 2rem;
+        }
+    }
+    &__content{
+        background-image: url("../img/valueprops-top-sprite.svg");
+        background-repeat: no-repeat;
+        width: 5rem;
+        height: 5rem;
+        margin: 0 auto;
+        margin-bottom:2rem;
+        
+        &.intellisense{
+            background-position: 0 0;
+        }
+        &.debugging{
+            background-position: -5.2rem 0;
+        }
+        &.git{
+            background-position: -10.4rem 0;
+        }
+        &.extensions-icon{
+            background-position: -15.6rem 0;
+        }
+    }
+    @include mediaQuery(768px){
+        &__wrapper{
+            @include grid(4, 5rem);
+        }
+    }
+}
 
 .testimonies{
     padding: 5rem 0;
@@ -220,7 +283,12 @@
     }
     @include mediaQuery($break-xl){
         .tns-controls{
-            width: 80vw;
+            width: 97vw;
+        }
+    }
+    @include mediaQuery($break-full){
+        .tns-controls{
+            width: 70vw;
         }
     }
 }
