@@ -12,10 +12,6 @@
             }
         }
     }
-    @include mediaQuery($break-lg){
-        padding-top: 9rem;
-
-    }
 }
 
 .banner{
@@ -34,7 +30,6 @@
             color: $clr-light;
             font-size: 4rem;
         }
-        
     }
     &__actions{
         h3{

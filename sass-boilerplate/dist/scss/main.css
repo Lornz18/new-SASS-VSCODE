@@ -36,6 +36,16 @@ body {
   padding: 1.5rem;
 }
 
+.btn {
+  display: inline-block;
+  padding: 2.1rem 1.5rem;
+  border: 1px solid transparent;
+}
+.btn.bg--blue {
+  background: #0066B8;
+  color: #fff;
+}
+
 .footer {
   background: hsl(0, 0%, 18%);
   padding: 5rem 0;
@@ -210,30 +220,12 @@ body {
 .header__actions ul li i {
   display: none;
 }
+.header__form {
+  display: none;
+}
 @media screen and (min-width: 992px) {
   .header .toggle__menu {
     display: none;
-  }
-  .header__nav {
-    position: unset;
-    max-height: none;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-  .header__nav ul {
-    display: none;
-  }
-  .header__nav .header__actions ul {
-    display: flex;
-  }
-  .header__nav .header__actions ul li:first-child a {
-    display: none;
-  }
-  .header__nav .header__actions ul li:first-child i {
-    color: gray;
-  }
-  .header__nav .header__actions ul li:first-child i:hover {
-    color: #fff;
   }
   .header__wrapper .branding ul {
     display: flex;
@@ -251,8 +243,38 @@ body {
   .header__wrapper .branding ul li:hover {
     cursor: pointer;
   }
-  .header__actions ul li i {
-    display: unset;
+  .header .container {
+    position: relative;
+    padding: 0rem 1.5rem;
+  }
+  .header__form {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header__form form i {
+    color: #fff;
+    transform: translateX(3.5rem);
+  }
+  .header__form form input {
+    padding: 2.3rem 4rem;
+    background: #3D3D42;
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  .header__form form input::-moz-placeholder {
+    color: #fff;
+  }
+  .header__form form input::placeholder {
+    color: #fff;
+  }
+  .header__form form input:hover {
+    border: 1px solid #fff;
+  }
+  .header__form form input[type=text], .header__form form input select {
+    outline: none;
   }
 }
 
@@ -270,11 +292,6 @@ body {
 }
 .update h3 a:hover {
   text-decoration: none;
-}
-@media screen and (min-width: 992px) {
-  .update {
-    padding-top: 9rem;
-  }
 }
 
 .banner {

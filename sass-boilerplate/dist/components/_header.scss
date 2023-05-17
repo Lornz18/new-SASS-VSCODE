@@ -83,36 +83,12 @@
             }
         }
     }
+    &__form{
+        display: none;
+    }
     @include mediaQuery($break-lg){
         .toggle__menu{
             display: none;
-        }
-        &__nav{
-            position:unset;
-            max-height: none;
-            width: fit-content;
-            ul{
-                display: none;
-            }
-            .header__actions{
-                ul{
-                    display: flex;
-                    li{
-                        &:first-child{
-                            a{
-                                display: none;
-                            }
-                            i{
-                                color: gray;
-                                &:hover{
-                                    color: $clr-light;
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
         &__wrapper{
             .branding{
@@ -134,11 +110,34 @@
                 }
             }
         }
-        &__actions{
-            ul{
-                li{
-                    i{
-                        display: unset;
+        .container{
+            position: relative;
+            padding: 0rem 1.5rem;
+        }
+        &__form{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            form{
+                i{
+                    color: $clr-light;
+                    transform: translateX(3.5rem);
+                }
+                input{
+                    padding: 2.3rem 4rem;
+                    background:$clr-bck-search;
+                    color: $clr-light;
+                    border: 1px solid transparent;
+                    &::placeholder{
+                        color: $clr-light;
+                    }
+                    &:hover{
+                        border: 1px solid $clr-light;
+                    }
+                    &[type=text], select{
+                        outline: none;
                     }
                 }
             }
